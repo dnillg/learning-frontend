@@ -1,0 +1,44 @@
+$composition-image-width: 55%;
+
+.image-composition {
+  position: relative;
+  min-height: max(20rem, calc((100vw - 2 * $body-margin) * 0.25));
+
+  img {
+    width: 55%;
+    position: absolute;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    border-radius: 2px;
+    box-sizing: border-box;
+    outline-offset: 1rem;
+    border: 0.5rem white solid;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      z-index: 20;
+      transform: scale(1.1) translateY(-0.5rem) translateX(-0.5rem);
+      transition: all 0.3s;
+      outline: 0.5rem solid $color-primary;
+      box-shadow: 0 2.5rem 6rem rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &_image-1 {
+    left: 0%;
+    top: 0%;
+    z-index: 11;
+  }
+
+  &_image-2 {
+    left: 45%;
+    top: 20%;
+    z-index: 12;
+  }
+
+  &_image-3 {
+    left: 20%;
+    bottom: 0%;
+    z-index: 13;
+  }
+}

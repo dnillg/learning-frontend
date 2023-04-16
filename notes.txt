@@ -1,0 +1,36 @@
+- 62.5%
+- 7 categories
+- partial imports
+- Padding more on the sides
+- Weird animation -> backface-visibility
+- form input highlight -- to hide: outline
+- direct child selector: >
+- not(last)
+- input:focus:invalid
+- Sibling (adjacent) selector: +
+- :placeholder-shown
+- radio buttons can't be styled
+    - using the label's elements
+    - :checked
+- sibling selector: ~
+- checkbox hack
+- transform-origin
+- vertical-align: middle (on table cells)
+- visibility: hidden
+  display: none
+  width: 0
+- :target
+- transition delay
+- everything selector: *
+- skew & unskew
+- background clip (clip-path)
+- clipping for the text
+- responsive images - source set
+- (safari) -webkit-min-device-pixel-ratio (instead of min-resolution dpi)
+- clip-path might not be supported
+- @supports (clip:path: polygon(0,0))
+- postcss - prefix css for compatibility in package.json
+- compress css with package.json
+- npm-run-all choo choo
+- ::selection "background-color" and "color"
+- media query "only screen"

@@ -1,0 +1,44 @@
+@import '../abstracts/utils';
+
+.grid-element {
+  float: left;
+  box-sizing: border-box;
+}
+
+.grid-row::after {
+  @include clearfix;
+}
+
+.grid-element::after {
+  @include clearfix;
+}
+
+.grid-1-of-2 {
+  @extend .grid-element;
+  width: 50%;
+}
+
+.grid-1-of-3 {
+  @extend .grid-element;
+  width: 33.333%;
+}
+
+.grid-2-of-3 {
+  @extend .grid-element;
+  width: 66.666%;
+}
+
+.grid-1-of-4 {
+  @extend .grid-element;
+  width: 25%;
+}
+
+.grid-2-of-4 {
+  @extend .grid-element;
+  width: 25%;
+}
+
+.grid-3-of-4 {
+  @extend .grid-element;
+  width: 75%;
+}

@@ -1,0 +1,107 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(119, 119, 119);
+}
+
+@keyframes gradient-header-animation {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+.gradient-heading {
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    #7ed56f,
+    #1f9b72,
+    #7ed56f,
+    #1f9b72,
+    #7ed56f
+  );
+
+  background-size: 200%;
+  color: rgba($color: #000000, $alpha: 0);
+  user-select: none;
+  animation: gradient-header-animation 5s linear infinite;
+}
+
+h2.heading-primary {
+  @extend .gradient-heading;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.65rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  line-height: 1.75rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+@keyframes back-forth {
+  0% {
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+
+  50% {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  100% {
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+}
+
+a.link-large {
+  color: #55c57a;
+  margin-top: 3rem;
+  border-bottom: 1px #55c57a solid;
+  padding: 3px;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: 0.3s;
+
+  &::after {
+    content: '🠚';
+    padding-left: 10px;
+    transition: 0.5s;
+  }
+
+  &:hover:after {
+    padding-left: 20px;
+    padding-right: 10px;
+    animation: 1.5s back-forth ease-in-out infinite;
+    animation-play-state: paused;
+    animation-play-state: running;
+  }
+
+  &:hover {
+    background-color: #55c57a;
+    color: white;
+  }
+}

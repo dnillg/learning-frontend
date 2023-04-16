@@ -1,0 +1,206 @@
+.tour-cards {
+  margin: 5rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 50rem;
+  padding: 0rem 1rem;
+}
+
+.tour-card {
+  flex: 1 1;
+  margin: 0rem 1rem;
+  perspective: 150rem;
+  position: relative;
+  min-height: 56rem;
+  max-width: 40rem;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  &:hover {
+    .tour-card__card-side--front {
+      transform: rotateY(180deg);
+    }
+
+    .tour-card__card-side--back {
+      transform: rotateY(360deg);
+    }
+  }
+
+  &__card-side {
+    position: absolute;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.15);
+    transition: all 0.5s ease;
+    visibility: visible;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  &__card-side--front {
+    @extend .tour-card__card-side;
+    transform: rotateY(0deg);
+    background-color: white;
+  }
+
+  &__card-side--back {
+    @extend .tour-card__card-side;
+    transform: rotateY(180deg);
+    text-align: center;
+    color: white;
+
+    &-1 {
+      background: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      );
+    }
+
+    &-2 {
+      background: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+    }
+
+    &-3 {
+      background: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+    }
+  }
+
+  &__only {
+    margin-top: 18rem;
+
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &__price {
+    font-size: 6rem;
+    font-weight: 200;
+  }
+
+  &__picture {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    width: 100%;
+    height: 27rem;
+    display: block;
+    z-index: 0;
+  }
+
+  &__picture--1 {
+    background: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      ),
+      url(../../img/nat-5.jpg);
+    background-size: cover;
+    background-blend-mode: screen;
+  }
+
+  &__picture--2 {
+    background: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      ),
+      url(../../img/nat-6.jpg);
+    background-size: cover;
+    background-blend-mode: screen;
+  }
+
+  &__picture--3 {
+    background: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      ),
+      url(../../img/nat-7.jpg);
+    background-size: cover;
+    background-blend-mode: screen;
+  }
+
+  &__header {
+    width: 28rem;
+    right: 3rem;
+    font-size: 2.8rem;
+    top: 12rem;
+    z-index: 10;
+    position: absolute;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: right;
+    color: white;
+    display: block;
+
+    & > span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      line-height: 1.7;
+    }
+  }
+
+  @mixin tour-card-header($color-1, $color-2) {
+    & > span {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-1, 0.85),
+        rgba($color-2, 0.85)
+      );
+    }
+  }
+
+  &__header--1 {
+    @include tour-card-header($color-secondary-light, $color-secondary-dark);
+  }
+
+  &__header--2 {
+    @include tour-card-header($color-primary-light, $color-primary-dark);
+  }
+
+  &__header--3 {
+    @include tour-card-header($color-tertiary-light, $color-tertiary-dark);
+  }
+
+  &__details {
+    text-align: center;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    li {
+      width: 100%;
+      display: block;
+      list-style: none;
+      padding: 1rem 0rem;
+      position: relative;
+
+      &:not(:last-child):before {
+        content: '';
+        position: absolute;
+        left: 10%;
+        bottom: 0;
+        height: 1px;
+        width: 80%; /* or 100px */
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}
