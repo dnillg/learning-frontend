@@ -5,7 +5,11 @@
 }
 
 .u-align-center {
-  text-align: center;
+  text-align: center !important;
+}
+
+.u-align-left {
+  text-align: left !important;
 }
 
 .u-margin-after-small {
