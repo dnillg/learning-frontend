@@ -1,0 +1,28 @@
+$derired-composition-aspect-ratio: 0.6;
+.introduction {
+  display: flex;
+
+  &__section {
+    flex: 1 1;
+  }
+
+  .image-composition {
+    min-height: min(
+      calc((100vw - $body-margin * 2) / 2 * $derired-composition-aspect-ratio),
+      calc($max-container-width * $derired-composition-aspect-ratio / 2)
+    );
+  }
+}
+
+@include respond(tab-land) {
+  .introduction {
+    display: block;
+  }
+
+  .introduction .image-composition {
+    min-height: min(
+      calc((100vw - $body-margin * 2) * $derired-composition-aspect-ratio),
+      calc($max-container-width * $derired-composition-aspect-ratio)
+    );
+  }
+}

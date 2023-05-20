@@ -1,3 +1,4 @@
+@import '../abstracts/mixins';
 .section-feedbacks {
   position: relative;
   width: 100%;
@@ -105,9 +106,37 @@
     display: table-cell;
     box-sizing: border-box;
     padding-left: 3rem;
+    text-align: justify;
 
     h3 {
       text-transform: uppercase;
+    }
+  }
+
+  @include respond(phone) {
+    transform: none;
+    display: block;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: auto;
+
+    box-sizing: border-box;
+
+    > * {
+      transform: none;
+    }
+
+    &__picture-container {
+      display: block;
+      height: 15rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__text {
+      display: block;
+      width: 100%;
+      padding: 0;
     }
   }
 }

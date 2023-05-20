@@ -1,6 +1,7 @@
 .tour-cards {
   margin: 5rem 0;
   display: flex;
+  justify-content: space-around;
   flex-flow: row wrap;
   min-height: 50rem;
   padding: 0rem 1rem;
@@ -200,6 +201,37 @@
         height: 1px;
         width: 80%; /* or 100px */
         border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .tour-cards {
+    display: block;
+  }
+
+  .tour-card {
+    margin: 5rem auto;
+  }
+}
+
+@include respond(phone) {
+  .tour-card {
+    &__card-side {
+      position: static;
+    }
+    .tour-card__card-side--back {
+      transform: none;
+      padding: 10rem 0rem;
+    }
+    &:hover {
+      .tour-card__card-side--front {
+        transform: none;
+      }
+
+      .tour-card__card-side--back {
+        transform: none;
       }
     }
   }

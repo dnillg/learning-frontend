@@ -17,8 +17,15 @@
 .info-cards {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: row;
+
+  &__break-evenly-helper {
+    flex: 1;
+    min-width: 100%;
+    height: 1px;
+    display: none;
+  }
 
   &__info-card {
     flex: 1 1;
@@ -30,6 +37,7 @@
     min-height: 35rem;
     text-align: center;
     transition: 0.3s;
+    min-width: 20rem;
 
     &:hover {
       transform: scale(1.03) translateY(-2rem);
@@ -62,5 +70,19 @@
     padding: 0rem 1rem;
     font-weight: 500;
     color: #777;
+  }
+}
+
+@include respond(tab-land) {
+  .info-cards {
+    &__break-evenly-helper {
+      display: block;
+    }
+  }
+}
+
+@include respond(phone) {
+  .section-infocards {
+    clip-path: none;
   }
 }

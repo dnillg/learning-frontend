@@ -2,8 +2,7 @@ $composition-image-width: 55%;
 
 .image-composition {
   position: relative;
-  min-height: max(20rem, calc((100vw - 2 * $body-margin) * 0.25));
-
+  height: 100%;
   img {
     width: 55%;
     position: absolute;

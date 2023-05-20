@@ -1,9 +1,10 @@
+@import '../abstracts/mixins';
+
 .header {
   background-color: green;
   position: relative;
   min-height: max(80vh, 60rem);
   max-height: 90rem;
-  padding: 2rem;
   background-image: linear-gradient(
       to right bottom,
       rgba(126, 213, 111, 0.8),
@@ -61,6 +62,11 @@
       font-weight: 400;
       letter-spacing: 3rem;
       color: white;
+
+      @include respond(phone) {
+        font-size: 5rem;
+        letter-spacing: 1.25rem;
+      }
     }
 
     .heading-subsitle {
@@ -68,6 +74,11 @@
       text-transform: uppercase;
       letter-spacing: 2rem;
       font-weight: 700;
+
+      @include respond(phone) {
+        font-size: 2rem;
+        letter-spacing: 0.65rem;
+      }
     }
   }
 

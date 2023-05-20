@@ -1,3 +1,5 @@
+@import '../abstracts/mixins';
+
 footer.footer {
   background-color: #333;
   min-height: 60rem;
@@ -9,5 +11,55 @@ footer.footer {
     margin-right: auto;
     margin-bottom: 10rem;
     width: 16rem;
+    user-select: none;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &__section {
+      padding: 1.5rem;
+    }
+  }
+
+  .footer-links {
+    max-width: 60rem;
+    border-top: #666 1px solid;
+    padding: 1rem;
+
+    a {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-bottom: 3rem;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: red;
+    }
+  }
+
+  .footer-disclaimer {
+    border-top: #666 1px solid;
+    flex: 1 1;
+    max-width: 60rem;
+  }
+
+  .footer-content__section {
+    flex: 1 1;
+  }
+
+  @include respond(phone) {
+    .footer-links {
+      a {
+        display: block;
+      }
+    }
+
+    .footer-disclaimer {
+      min-width: 100%;
+    }
   }
 }
