@@ -11,6 +11,8 @@ body {
 
 html {
   font-size: 62.5%;
+  margin: 0px;
+  padding: 0px;
 
   @include respond(tab-land) {
     font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
@@ -26,7 +28,6 @@ html {
 }
 
 body {
-  padding: $body-margin;
   min-height: 30rem;
   font-size: 1.6rem;
   font-family: Lato, Cursive, sans-serif;
@@ -39,11 +40,13 @@ body {
 }
 
 .site__container {
+  padding: $body-margin;
   background-color: #f7f7f7;
   overflow: visible;
   box-sizing: border-box;
   display: table;
   max-width: 160rem;
+  margin: 0rem auto;
 }
 
 a,
